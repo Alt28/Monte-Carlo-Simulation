@@ -1,15 +1,22 @@
+/* General Styles */
 body {
     background: #0f172a; /* Keep the dark background for the night effect */
     color: #f8fafc; /* Light text color */
     font-family: 'Inter', sans-serif;
     padding: 2rem;
     margin: 0;
+    display: flex; /* Use Flexbox for simulation layout */
+    justify-content: center; /* Center the container horizontally */
+    align-items: center; /* Center the container vertically */
+    min-height: 100vh; /* Ensure the body fills the viewport height */
+    box-sizing: border-box; /* Include padding and border in width/height */
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    overflow-x: auto;
 }
 
 th, td {
@@ -19,6 +26,7 @@ th, td {
     border: 1px solid #334155; /* Border between table cells */
     background: #1e293b; /* Cell background */
     color: #f8fafc; /* Cell text color */
+    position: relative; /* Ensure proper alignment for input inside th */
 }
 
 th {
@@ -31,12 +39,13 @@ th {
 thead input {
     border: none;
     padding: 8px;
-    width: 100%;
+    width: calc(100% - 20px); /* Adjust width to account for padding */
     background: #1e293b;
     color: #f8fafc;
     font-weight: bold;
     text-align: center;
     border-radius: 4px;
+    box-sizing: border-box; /* Ensure input size includes padding and borders */
 }
 
 thead input:focus {
@@ -49,10 +58,11 @@ tr:hover {
     background-color: #2d3748; /* Slightly lighter hover color */
 }
 
+/* Button Styles */
 .button {
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1.2rem; /* Increased padding */
     border: none;
-    border-radius: 8px;
+    border-radius: 8px; /* Larger rounded corners */
     cursor: pointer;
     font-size: 14px;
     font-weight: bold;
@@ -77,9 +87,98 @@ tr:hover {
     background: #ef4444;
 }
 
+/* Container Styles */
 .container {
     border-radius: 16px;
     background: #1e293b;
-    padding: 1.5rem;
+    padding: 2rem; /* Increased padding to create space inside the container */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    margin: 2rem; /* Add margin to separate the container from the edges */
+    max-width: 1200px; /* Increased width for larger screens */
+    width: 100%; /* Ensure responsiveness */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .container {
+        padding: 1rem;
+        margin: 1rem; /* Reduce margin for smaller screens */
+    }
+
+    table {
+        font-size: 12px;
+        border-spacing: 0; /* Reduce spacing between cells */
+        overflow-x: auto;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    thead input {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .button {
+        font-size: 12px;
+        padding: 0.3rem 0.8rem;
+    }
+}
+
+/* Extra Small Devices (Phones under 480px wide) */
+@media (max-width: 480px) {
+    table {
+        display: block; /* Make the table scrollable */
+        overflow-x: auto;
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+
+    th, td {
+        font-size: 10px;
+        padding: 6px;
+    }
+
+    thead input {
+        font-size: 10px;
+        padding: 4px;
+    }
+
+    .button {
+        font-size: 10px;
+        padding: 0.2rem 0.6rem;
+    }
+
+    h1 {
+        font-size: 1.2rem; /* Smaller header size for small screens */
+    }
+
+    .container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+}
+
+/* Custom Scrollbar for Tables */
+::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
 }
