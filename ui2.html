@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ui2.css">
+    <script src="ui2.js" defer></script>
+    <title>Monte Carlo Simulation</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="container">
+            <div class="header">
+                <h1>Monte Carlo Simulation</h1>
+                <button class="add-row-btn" onclick="addSimulationRow()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M5 12h14"/>
+                    </svg>
+                    Add Row
+                </button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th><input type="text" value="Enter Label.." onfocus="this.value=''" /></th>
+                        <th><input type="text" value="Enter Label.." onfocus="this.value=''" /></th>
+                        <th>Probability</th>
+                        <th>Cumulative Probability</th>
+                        <th>Random Number Interval</th>
+                    </tr>
+                </thead>                
+                <tbody id="simulation-table">
+                    <tr>
+                        <td>Easy</td>
+                        <td>15</td>
+                        <td>0.4</td>
+                        <td>0.40</td>
+                        <td class="rni-range">0-39</td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="btn btn-delete">Delete</button>
+                                <button class="btn btn-edit">Edit</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Normal</td>
+                        <td>30</td>
+                        <td>0.3</td>
+                        <td>0.70</td>
+                        <td class="rni-range">40-69</td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="btn btn-delete">Delete</button>
+                                <button class="btn btn-edit">Edit</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hardcore</td>
+                        <td>45</td>
+                        <td>0.2</td>
+                        <td>0.90</td>
+                        <td class="rni-range">70-89</td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="btn btn-delete">Delete</button>
+                                <button class="btn btn-edit">Edit</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Profession</td>
+                        <td>60</td>
+                        <td>0.1</td>
+                        <td>1.00</td>
+                        <td class="rni-range">90-99</td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="btn btn-delete">Delete</button>
+                                <button class="btn btn-edit">Edit</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="details-container">
+            <h2>Simulation</h2>
+            <button class="add-simulation-btn" onclick="addDetailRow()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 5v14M5 12h14"/>
+                </svg>
+                Run Simulation
+            </button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Simulation</th>
+                        <th>Random</th>
+                        <th>Output</th>
+                    </tr>
+                </thead>
+                <tbody id="details-table"></tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
